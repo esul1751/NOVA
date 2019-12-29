@@ -1,0 +1,66 @@
+
+INSERT INTO Team VALUES (1,'Wildcats','Villanova University');
+INSERT INTO Team VALUES (2,'Buckeyes','Ohio State University');
+INSERT INTO Team VALUES (3,'Explorers','La Salle University');
+INSERT INTO Team VALUES (4,'Golden Eagles','Marquette University');
+INSERT INTO Team VALUES (5,'Bulldogs','Butler University');
+INSERT INTO Team VALUES (6,'Musketeers','Xavier University');
+INSERT INTO Team VALUES (7,'Quakers','University of Pennsylvania');
+INSERT INTO Team VALUES (8,'Wolverines','University of Michigan');
+INSERT INTO Team VALUES (9,'Jayhawks','University of Kansas');
+INSERT INTO Team VALUES (10,'Pirates','Seton Hall University');
+
+INSERT INTO Player VALUES (1,'Guard', 'Collin Gillespie', 'Villanova University', 02, 3, 2017 , Null);
+INSERT INTO Player VALUES (2,'Guard', 'Chris Arcidiacono', 'Villanova University', 04, 1, 2019 , Null);
+INSERT INTO Player VALUES (3,'Forward', ' Dhamir Cosby-Roundtree', 'Villanova University', 21, 3, 2017 , Null);
+INSERT INTO Player VALUES (4,'Forward', 'Jermaine Samuels', 'Villanova University', 23, 3, 2017 , Null);
+INSERT INTO Player VALUES (5,'Forward', 'Saddiq Bey', 'Villanova University', 41, 2, 2018 , Null);
+INSERT INTO Player VALUES (6,'Guard', 'Zavier Simpson', 'University of Michigan', 03, 4, 2016 , Null);
+INSERT INTO Player VALUES (7,'Center', 'Jon Teske', 'University of Michigan', 15, 4, 2016 , Null);
+INSERT INTO Player VALUES (8,'Center', 'Udoka Azubuike', 'University of Kansas', 35, 4, 2016 , Null);
+INSERT INTO Player VALUES (9,'Forward', 'Mitch Lightfoot', 'University of Kansas', 44, 4, 2016 , Null);
+INSERT INTO Player VALUES (10,'Forward', 'Jalen Wilson', 'University of Kansas', 10, 1, 2019 , Null);
+
+INSERT INTO Head_Coach VALUES (1,'Jay Wright','Villanova University','27-MAR-2001',NULL,570,260);
+INSERT INTO Head_Coach VALUES (2,'Juwan Howard','University of Michigan','22-MAY-2019',NULL,0,0);
+INSERT INTO Head_Coach VALUES (3,'John Beilein','University of Michigan','03-APR-2007','13-MAY-2019',278,150);
+INSERT INTO Head_Coach VALUES (4,'Chris Holtmann','Ohio State University','09-JUN-2017',NULL,45,24);
+INSERT INTO Head_Coach VALUES (5,'Ashley Howard','La Salle University','08-APR-2018',NULL,10,21);
+INSERT INTO Head_Coach VALUES (6,'Steve Wojciechowski','Marquette University','01-APR-2014',NULL,97,69);
+INSERT INTO Head_Coach VALUES (7,'LaVall Jordan','Butler University','12-Jun-2016',NULL,37,31);
+INSERT INTO Head_Coach VALUES (8,'Travis Steele','Xavier University','31-MAR-2018',NULL,19,16);
+INSERT INTO Head_Coach VALUES (9,'Steve Donahue','University of Pennsylvania','16-MAR-2015',NULL,67,52);
+INSERT INTO Head_Coach VALUES (10,'Bill Self','University of Kansas','21-APR-2003',NULL,473,106);
+
+INSERT INTO team_statistics VALUES (1,2018, 26, 10, 1, 3, 6);
+INSERT INTO team_statistics VALUES (1,2017, 36, 4,3,6,13);
+INSERT INTO team_statistics VALUES (1,2016, 32, 4,2, 12, 14);
+INSERT INTO team_statistics VALUES (1,2015, 35, 5,2,5,8);
+INSERT INTO team_statistics VALUES (1,2014, 33, 3,1,17,3);
+INSERT INTO team_statistics VALUES (1,2013, 29, 5,3,14,2);
+INSERT INTO team_statistics VALUES (1,2012, 20, 14,2,5,7);
+INSERT INTO team_statistics VALUES (1,2011, 13, 19,3,7,18);
+INSERT INTO team_statistics VALUES (1,2010, 21, 12,0,3,15);
+INSERT INTO team_statistics VALUES (1,2009, 25, 8,3,6,9);
+
+INSERT INTO Player_Statistics VALUES (1,'Collin Gillespie', 'Villanova University',10,45,0,0,0,3,6 );
+INSERT INTO Player_Statistics VALUES (2,'Chris Arcidiacono', 'Villanova University', 5,0,0,0,0,5,5 );
+INSERT INTO Player_Statistics VALUES (3,'Dhamir Cosby-Roundtree', 'Villanova University',14,0,0,0,0,10,12 );
+INSERT INTO Player_Statistics VALUES (4,'Jermaine Samuels', 'Villanova University',2,0,0,0,0,0,2 ) ;
+INSERT INTO Player_Statistics VALUES (5,'Saddiq Bey', 'Villanova University',4,0,0,0,0,7,8);
+INSERT INTO Player_Statistics VALUES (6,'Zavier Simpson', 'University of Michigan',0,0,0,0,0,1,3  );
+INSERT INTO Player_Statistics VALUES (7,'Jon Teske', 'University of Michigan',0,0,0,0,0,1,4  );
+INSERT INTO Player_Statistics VALUES (8,'Udoka Azubuike', 'University of Kansas',0,0,0,0,0,2,6  );
+INSERT INTO Player_Statistics VALUES (9,'Mitch Lightfoot', 'University of Kansas',0,0,0,0,0,3,6  );
+INSERT INTO Player_Statistics VALUES (10,'Jalen Wilson', 'University of Kansas',0,0,0,0,0,0,3  );
+
+INSERT INTO Belongs_To VALUES (1,1,1,2019);
+INSERT INTO Belongs_To VALUES (1,2,1,2018);
+INSERT INTO Belongs_To VALUES (1,3,1,2017);
+INSERT INTO Belongs_To VALUES (1,4,1,2016);
+INSERT INTO Belongs_To VALUES (1,5,1,2015);
+INSERT INTO Belongs_To VALUES (8,6,2,2014);
+INSERT INTO Belongs_To VALUES (8,7,2,2013);
+INSERT INTO Belongs_To VALUES (9,8,10,2012);
+INSERT INTO Belongs_To VALUES (9,9,10,2011);
+INSERT INTO Belongs_To VALUES (9,10,10,2010);
