@@ -1,0 +1,75 @@
+DROP TABLE Team CASCADE CONSTRAINTS;
+DROP TABLE Player CASCADE CONSTRAINTS;
+DROP TABLE Head_Coach CASCADE CONSTRAINTS;
+DROP TABLE Team_Statistics CASCADE CONSTRAINTS;
+DROP TABLE Player_Statistics CASCADE CONSTRAINTS;
+DROP TABLE Belongs_To CASCADE CONSTRAINTS;
+
+CREATE TABLE Team ( 
+    Team_ID         number(4) not null,
+    Team_Name       varchar2(30) not null,
+    School_Name     varchar2(30) not null,
+    CONSTRAINT TeamPK primary key (Team_ID)
+);
+
+CREATE TABLE Player (
+    Player_ID               number(5) not null,
+    Player_Position         varchar2(20) not null,
+    Player_Name             varchar2(30) not null,
+    School_Name             varchar2(30) not null, 
+    Player_Number           number(2) not null,
+    Current_Year            number(1) not null,
+    Player_Start_Date       number(4) not null,
+    Player_End_Date         number(4),
+    CONSTRAINT PlayerPK primary key (Player_ID)
+);
+
+CREATE TABLE Head_Coach (
+    Coach_ID            number(4) not null,
+    Coach_Name          varchar2(30) not null,
+    School_Name         varchar2(30) not null,
+    Coach_Start_Date    date not null,
+    Coach_End_Date      date,
+    Coach_Wins          number(3) not null,
+    Coach_Losses        number(3) not null,
+    CONSTRAINT Head_CoachPK primary key (Coach_ID)
+);
+
+CREATE TABLE Team_Statistics (
+    Team_ID             number(4) not null,
+    Team_Year           number(4) not null,
+    Team_Wins           number(2) not null,
+    Team_Losses         number(2) not null,
+    Tournaments_Won     number(1) not null,
+    Start_Rank          varchar2(2) not null,
+    Current_Rank        varchar2(2) not null,
+    CONSTRAINT Team_StatisticsPK primary key (Team_ID,Team_Year),
+    CONSTRAINT Team_StatisticsFK foreign key (Team_ID) references Team(Team_ID)
+);
+
+CREATE TABLE Player_Statistics (
+    Player_ID               number(5) not null,
+    Player_Name             varchar2(30) not null,
+    School_Name             varchar2(30) not null,
+    Games_Played            number(2) not null,
+    Minutes_Per_Game        varchar2(5) not null,
+    Points_Per_Game         number(2) not null,
+    Field_Goals_Made        number(2) not null,
+    Field_Goals_Attempted   number(2) not null,
+    Three_Points_Made       number(2) not null,
+    Three_Points_Attempted  number(2) not null,
+    CONSTRAINT Player_StatisticsPK primary key (Player_ID),
+    CONSTRAINT PlayerFK foreign key (Player_ID) references Player(Player_ID)
+);
+
+
+CREATE TABLE Belongs_To (
+    Team_ID         number(4) not null,
+    Player_ID       number(5) not null,
+    Coach_ID        number(4) not null,
+    Year_Played     number(4) not null,
+    CONSTRAINT Belongs_ToPK primary key (Team_ID,Player_ID,Coach_ID),
+    CONSTRAINT Belongs_ToTeamFK foreign key (Team_ID) references Team(Team_ID),
+    CONSTRAINT Belongs_ToPlayerFK foreign key (Player_ID) references Player(Player_ID),
+    CONSTRAINT Belongs_ToCoachFK foreign key (Coach_ID) references Head_Coach(Coach_ID)
+);
